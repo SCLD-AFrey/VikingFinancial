@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0d8c48cf-8a6a-4c5c-a527-2ca76f1c5746" namespace="VikingFinancial.Data.Transaction" dataBaseShemaInfo="H4sIAAAAAAAEAO1a227cNhB9L5B/MPwcenm/BGsHvqRB0DQwYqft65Ac2kJ2V4aktZ2/78i3+JbWjbfaxjUMLMzhEOLRnJk5lDR+fTqdrBxj01b1bH1VrPHV1xsvfhpvQYt7Xd3AAb6blXqFvGbtq9M2r68edt3Rq9Ho5ORk7USt1c3BSHIuRn/8+n4vHeIUVq+cq793ZtWs7WCWcJWuurIy3oc4wba/5Nn40nLNcGn6AFPc2G9g1kLqaPPj0VfzleebWW/b6Jo5jkcXg6vJnartDZ+OMnS4UWDSktNN45Xv23mV3+WNnFwAwMS45oHplCWD6GiYZPZCoLPRj0cXzleLt+vJfDprb4D4ppkmegznkxub03o+68aja6Ybrn8F8J+CvA40lZy8tYKF4j3TvggWwSkmER0EYYpFfQcoLR89AusObWa7QfrNwwN2XmQlZWJOaGDaOc58UpoJA4WDz0VY928AvsHgoUFbDE5YZVgUSHRWurDoVWJeZR+jUQJ1WTTobdrMQd18WUKIdc4memSGU3R1tJS8IAozVtMgGAcmLzzE2KbhkcqcoiwcWQoUTe2TZkGUzHJCoUIRKRaxaKQf6g6HR6qy9B6sZcWAYFobz6LVkpkciosxIGJaNNLNnDFvffnUYrOElE1OucwTM5SbTIdCJDaRktcmBZHr6AEeDPg+60Uf/Z4W/DW1B2jFRijFLURWVFFMc2J7EAqY5JijgIL+ng71mFa8X3WTJTA8yChSrzZK5sTwAsi8o8aUuIaotebODhvwnve7TV2q/m4MEGjJoyKyR4Y2IQXaIANt6AaI7LTkSSS825kfE+ge4IyGw8c6cx1skYZKdqDk5tScwPJMnRkyxCwpx+/Ky0dWs11o25O6WYLkUkUXpwVnzmgKrNSG+ZJIfYSiXUbPHcZFo92DyRLUNBJTs7eaycB7cSkVi5zILAMaX5QxxatFI33XbuZptQRRGQ2PXJKotCFQWCMVZo9UpwEV/ZkcdXi4+FhEwfq96g5zAycweW5Q/4cGtYNHdVt1gwYbXXFBomPWSxJjhJpOzrkwz61LmEUSXj6FYEdVIlIaswJAfclTM/ZBWRZ49glUAo0P71CLTe5B4pxMicJFzowKkkS3FyxEY+nE7HgA7yMXfKFx3sF4ncqDn5l5iBhEYBAcKRJNZ+bQ13anpAhGhkRt7Qk9IVgk2gWWskGoXSBSlYqOoXNE7Sg1nSwzMPQhUd8i6Wnu9u3HUHu7wbxMbmuvtRLcMuX6XI5Zs2iSZ6i0d84jxng3l39Ybi8U7WK4HQdu0s+K7DsU2YOPG+/r9HkZT+6t9BaNkVSoPB2utM9UtyCwjE5aFDIjhkGJfbuuPcvP/6b8/AGYLWJRwjFuA9WrYB0LqOjHKCtdENqWoeVIHEiMDK6zn0Xnrfr1RDXns/66DOrWPB9g967D6TCP8QFU9gFYUInwI1gGVhH+ZIzgkvevYp9IqK3EIvo3czkFR8WLylhUOTGbc4zSxozRLPyl5JI+FClOBTAqsliKIVpDYoCOtCZkr0T/gDs+/CH+Q2h9Mf7qMu6/U8K829TpzLgyOjf/dv5REzWt4zenRw227doOdLB2LOWaeLlyMb3ej9bsGn+5sj2fdPMG12c47xqYvFzZncdJlX7BL/v1Z5ytR++zcEZnRycHHUhCX17i7HrbE2hbbPsAfJxf3d3xZqatYalOL/Z1btqblxumjzitj/G247n1tu82tLjxaZYOYXbQy5Kz8fmtuW8PY7ozR9h01ZL39o1tjN/iDJv+0596OsVZ115w9I75hvMOttUB/ftzRVS4teLm3NmyHZxgh5ttW6cK+lfVl2vumThb8GE+mfQ028JDOK7qhlhUYH727uj2zIufxqNbn8tt/AlKRpM2VycAAA==" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" connectionStringName="transactionConn" createdInVersion="22.1.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.1.6.0" name="transaction" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="1b5c6f92-08a3-4290-8ed8-7e5b50af1203">
+      <xpObject Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" name="Transaction" baseClass="XPObject" userFileName="Transaction" designerFileName="Transaction.Designer" className="Transaction" virtualName="Transaction">
+        <fields>
+          <generalXpObjectHasFields Id="0d742edf-a9db-4f7d-99ab-03df3e0ca598">
+            <field Id="cfdc8661-9f88-48f1-ba73-2ee7a915f6e4" name="Amount" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9c2697bf-8f12-49b8-9a2b-56d73ef6db8f">
+            <field Id="2dcb2f0e-c93c-48c4-91fd-dce139f1cbf1" name="Desc" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1317b9a8-9719-4874-94ea-02409740c8a8">
+            <field Id="3d288a66-f5a1-4458-b642-5d9f7bb9eeec" name="Note" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6290b857-1ed5-4d61-a7ae-bb848641dee9">
+            <field Id="781d322c-714a-4770-8c34-15af0a8df167" name="DateCreated" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="091c3a8e-0335-489e-babf-bdea176073c7">
+            <field Id="6e971635-b1e9-434f-b83c-83d8bb531e4f" name="DateTransaction" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="09532c87-75fb-4408-b96e-9cb74f29e0e6">
+            <field Id="6c737d0c-5e4f-49f2-a5b9-46c3ab04b8aa" name="AddedByUser" virtualColumnType="UserProfile" logicalType="UserProfile" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="a1cca572-397a-4ebf-a062-5431020b5abd">
+      <xpObject Id="513306ab-f3f3-400e-913a-20edb1afe8e4" name="DebitCategory" baseClass="XPObject" userFileName="DebitCategory" designerFileName="DebitCategory.Designer" className="DebitCategory" virtualName="DebitCategory">
+        <fields>
+          <generalXpObjectHasFields Id="b8903d7f-a3b8-4999-a499-30cab03b08cc">
+            <field Id="92b1c409-fd01-4fae-8734-c04ab444076a" name="Title" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0f723c30-5b41-4d9a-b436-6f2511e9a780">
+            <field Id="6286e552-e88a-448d-a5a9-de726e12dee9" name="IsLocked" columnType="Boolean" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" defaultValue="Boolean#False" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="19dc8fa6-c91a-43b7-bf27-baecb21dfc16" sourceCollectionName="Withdrawals" name="WithdrawalReferencesWithdrawalCategory" targetFieldName="Category">
+            <xpObjectMoniker Id="c5fb17b0-5392-4681-9b56-83709a88b010" />
+          </simpleAssociation>
+          <simpleAssociation Id="c4807fe5-9626-4ed9-a8df-8b3b7ae26828" sourceCollectionName="BudgetItems" name="BudgetItemReferencesDebitCategory" targetFieldName="Category">
+            <xpObjectMoniker Id="2aa3d89a-93c2-4ea6-a638-ec551020aa1f" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="505070bd-716c-4c22-bb77-219317f7a81b">
+            <collectionField Id="f7c8cdea-bb9f-478f-aef4-abd566757a0d" name="Withdrawals" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="d56548f0-65c7-4849-885f-7934975d7390">
+            <collectionField Id="5a153398-4b80-4462-82fb-ec852c312343" name="BudgetItems" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="32873980-33a7-4fd6-9ac6-29c504899c05">
+      <xpObject Id="20b35e4b-e6ce-405e-a454-c1d7420c1ce7" name="UserProfile" baseClass="XPObject" userFileName="UserProfile" designerFileName="UserProfile.Designer" className="UserProfile" virtualName="UserProfile">
+        <fields>
+          <generalXpObjectHasFields Id="6e4f6eff-075d-4a23-a649-4601cb499878">
+            <field Id="d0496f25-489f-401f-a60d-43adabd26c38" name="Username" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="25" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="dc6de2be-fa7b-4017-8bf8-2b47682a1e2c">
+            <field Id="3f4f7410-754e-4245-8fcc-89f47de807eb" name="Password" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1aef7bb7-447b-46b0-bb0c-56727cb451bb">
+            <field Id="ed74d864-290a-4723-b0ce-29e58f355f83" name="Salt" columnType="ByteArray" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7900e58a-0068-448a-940f-092a416053b3">
+            <field Id="b50b0235-699e-4b0e-8eab-ae3e3e5db491" name="IsAdmin" columnType="Boolean" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" defaultValue="Boolean#False" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="382049cf-87fe-4eff-b0a4-b0dabce1143c" sourceCollectionName="Transactions" name="TransactionReferencesUserProfile" targetFieldName="AddedByUser">
+            <xpObjectMoniker Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="e8d306aa-4404-48ee-9dc4-17b686927f6f">
+            <collectionField Id="ce5d8bf9-c8db-4f8f-96a7-9fb5b3bf1900" name="Transactions" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="08b53cdd-b97b-43f1-b082-da974f21c7f9">
+      <xpObject Id="e7f792e7-6829-4440-9fdf-8067ced1c182" name="CreditCategory" baseClass="XPObject" userFileName="CreditCategory" designerFileName="CreditCategory.Designer" className="CreditCategory" virtualName="CreditCategory">
+        <fields>
+          <generalXpObjectHasFields Id="ada24beb-1434-4f9e-ae46-aa4a545ea328">
+            <field Id="b3fbee3e-faad-485e-8936-90d8ca3ca4e8" name="Title" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="21e8ab21-9e95-4f3c-8bb0-3c25cfebe65e">
+            <field Id="621bf317-0693-4967-9e37-9536279146f6" name="IsLocked" columnType="Boolean" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" defaultValue="Boolean#False" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="042eba1c-f422-4352-b928-14954b206989" sourceCollectionName="Deposits" name="DepositReferencesDepositCategory" targetFieldName="Category">
+            <xpObjectMoniker Id="fabc18b7-e772-4b24-a5da-e89c13ac3851" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="e097fa46-b055-4d96-80a8-98a957402e8d">
+            <collectionField Id="c7b12391-4293-4c55-a6d9-de265587d2e8" name="Deposits" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="5c1fe3c4-a01a-428d-acd5-89c0524a19e8">
+      <xpObject Id="c5fb17b0-5392-4681-9b56-83709a88b010" name="Debit" baseClass="Transaction" userFileName="Debit" designerFileName="Debit.Designer" className="Debit" virtualBaseClass="Transaction" virtualName="Debit">
+        <fields>
+          <generalXpObjectHasFields Id="404c4c7e-ff1c-4a97-8dc8-5d069ac2b1aa">
+            <field Id="709be919-a97f-4462-9235-73219529cd86" name="Category" virtualColumnType="DebitCategory" logicalType="DebitCategory" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="59cc4686-8bc5-4389-a9a5-5e64d9ef0e47">
+            <xpObjectMoniker Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="8d30803d-643b-4b83-b3c5-e426f2dd00f4">
+      <xpObject Id="fabc18b7-e772-4b24-a5da-e89c13ac3851" name="Credit" baseClass="Transaction" userFileName="Credit" designerFileName="Credit.Designer" className="Credit" virtualBaseClass="Transaction" virtualName="Credit">
+        <fields>
+          <generalXpObjectHasFields Id="153461f0-ee85-44d9-b736-0bee2562a124">
+            <field Id="48443106-3792-4bd4-b5c8-e348778eebb0" name="Category" virtualColumnType="CreditCategory" logicalType="CreditCategory" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="27e6e9a2-01a1-4c60-8e55-91bcf7d1e2a1">
+            <xpObjectMoniker Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="f032c396-801d-43a9-b175-013a9dd79261">
+      <xpObject Id="2aa3d89a-93c2-4ea6-a638-ec551020aa1f" name="BudgetItem" baseClass="XPObject" userFileName="BudgetItem" designerFileName="BudgetItem.Designer" className="BudgetItem" virtualName="BudgetItem">
+        <fields>
+          <generalXpObjectHasFields Id="8ab25d85-63f9-4341-ad97-a4f5f7caee23">
+            <field Id="62ef19f2-dc97-46b0-b3dc-6ddbb26bdeb5" name="Category" virtualColumnType="DebitCategory" logicalType="DebitCategory" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4da99c5f-09b9-4835-a3a4-74abc3a584a1">
+            <field Id="f739a53b-bff5-4bac-ae74-cad83129e5bb" name="Amount" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

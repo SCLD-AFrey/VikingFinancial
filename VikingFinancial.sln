@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Gui", "VikingFinancial.Gui\VikingFinancial.Gui.csproj", "{9FA608BF-CB58-434D-8C47-6123D067F0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Data.Transaction", "VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj", "{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
