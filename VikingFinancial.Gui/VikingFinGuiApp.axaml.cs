@@ -9,10 +9,13 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Formatting.Json;
 using System.Threading.Tasks;
+using VikingFinancial.Gui.Models.BackingModels.MainApplication;
 using VikingFinancial.Gui.Models.Services;
 using VikingFinancial.Gui.Models.Services.Database;
 using VikingFinancial.Gui.ViewModels;
+using VikingFinancial.Gui.ViewModels.MainApplication;
 using VikingFinancial.Gui.Views;
+using VikingFinancial.Gui.Views.MainApplication;
 
 namespace VikingFinancial.Gui
 {
@@ -36,10 +39,20 @@ namespace VikingFinancial.Gui
 
             p_services.AddSingleton<Folders>();
             p_services.AddSingleton<Files>();
-            p_services.AddSingleton<MainWindowView>();
+            p_services.AddSingleton<Crypto>();
+            
             p_services.AddSingleton<DatabaseUtilities>();
             p_services.AddSingleton<TransactionDatabaseInterface>();
             p_services.AddSingleton<TransactionDatabaseInitialization>();
+            
+            p_services.AddSingleton<MainWindowView>();
+            p_services.AddSingleton<MainWindowModel>();
+            p_services.AddSingleton<MainWindowViewModel>();
+            p_services.AddSingleton<MainWorkspaceModel>();
+            
+            p_services.AddSingleton<LandingPageModel>();
+            
+            p_services.AddSingleton<MainWorkspaceModel>();
         }
 
         public override void Initialize()
@@ -86,9 +99,9 @@ namespace VikingFinancial.Gui
         }
 
         private async Task DoFirstTimeSetup()
-        {
-
-
+        { 
+            var dbInitializationService = m_appHost.Services.GetRequiredService<TransactionDatabaseInitialization>();
+            await dbInitializationService.DoFirstTimeSetup();
         }
 
         private async void DesktopOnShutdownRequested(object? p_sender, ShutdownRequestedEventArgs p_e)

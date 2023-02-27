@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VikingFinancial.Gui.Models.Services
 {
-    internal class VersionInfo
+    public class VersionInfo
     {
     }
 }

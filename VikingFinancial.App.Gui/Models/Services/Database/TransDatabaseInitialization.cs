@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
@@ -11,18 +11,19 @@ using VikingFinancial.Data.Transaction;
 
 // ReSharper disable UnusedVariable
 
-namespace VikingFinancial.Gui.Models.Services.Database;
+namespace VikingFinancial.App.Gui.Models.Services.Database;
 
-public class TransactionDatabaseInitialization
+public class TransDatabaseInitialization
 {
-    private readonly ILogger<TransactionDatabaseInitialization> m_logger;
-    private readonly TransactionDatabaseInterface m_dbInterface;
+    private readonly ILogger<TransDatabaseInitialization> m_logger;
+    private readonly TransDatabaseInterface m_dbInterface;
     private readonly Files m_requiredFilesService;
     private readonly Crypto m_cryptoService;
 
-    public TransactionDatabaseInitialization(ILogger<TransactionDatabaseInitialization> p_logger,
+    public TransDatabaseInitialization(ILogger<TransDatabaseInitialization> p_logger,
         Crypto p_cryptoService,
-        TransactionDatabaseInterface p_dbInterface, Files p_requiredFilesService)
+        TransDatabaseInterface p_dbInterface, 
+        Files p_requiredFilesService)
     {
         m_logger = p_logger;
         m_dbInterface = p_dbInterface;
@@ -47,6 +48,7 @@ public class TransactionDatabaseInitialization
                 IsFirstRun = true;
 
                 m_logger.LogDebug("Database does not exist, creating initial groups");
+
 
                 try
                 {
@@ -89,18 +91,7 @@ public class TransactionDatabaseInitialization
                 {
                     m_logger.LogError(e, "Error creating initial groups");
                 }
-
-
-                return;
             }
-
-            //var forgeInfo = unitOfWork.Query<ForgeData>();
-
-            //if (forgeInfo.Any())
-            //{
-            //    CheckForgeVersion(forgeInfo);
-            //    return;
-            //}
 
             IsFirstRun = true;
         }
@@ -109,6 +100,4 @@ public class TransactionDatabaseInitialization
             throw new DataException("Database file does not exist but should at this point in program execution");
         }
     }
-
-
 }

@@ -1,8 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Gui", "VikingFinancial.Gui\VikingFinancial.Gui.csproj", "{9FA608BF-CB58-434D-8C47-6123D067F0A0}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VikingFinancial.Data.Transaction", "VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj", "{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Data.Transaction", "VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj", "{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.WebController", "VikingFinancial.WebController\VikingFinancial.WebController.csproj", "{512E9EDD-C639-4779-8CA0-D18FCDB01BBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.WebClient", "VikingFinancial.WebClient\VikingFinancial.WebClient.csproj", "{C9A2702D-6D06-47E4-B1DA-5F3D03800BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Protos", "VikingFinancial.Protos\VikingFinancial.Protos.csproj", "{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9FA608BF-CB58-434D-8C47-6123D067F0A0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512E9EDD-C639-4779-8CA0-D18FCDB01BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512E9EDD-C639-4779-8CA0-D18FCDB01BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512E9EDD-C639-4779-8CA0-D18FCDB01BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512E9EDD-C639-4779-8CA0-D18FCDB01BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A2702D-6D06-47E4-B1DA-5F3D03800BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A2702D-6D06-47E4-B1DA-5F3D03800BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A2702D-6D06-47E4-B1DA-5F3D03800BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A2702D-6D06-47E4-B1DA-5F3D03800BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7252CBE-6F5B-424B-9ACF-E63A4A49B256}
 	EndGlobalSection
 EndGlobal

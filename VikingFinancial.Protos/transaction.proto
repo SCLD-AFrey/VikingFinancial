@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package valkyriefinancial.protos.transactions;
+
+option csharp_namespace="valkyriefinancial.protos.transactions";
+
+
+service TransactionsService {
+  rpc GetServiceCheck(G_ServiceCheckRequest) returns (G_ServiceCheckResponse) {}
+  rpc AddTransaction(G_AddTransactionRequest) returns (G_AddTransactionResponse) {}
+  rpc GetTransactions(G_GetTransactionRequest) returns (G_GetTransactionResponse) {}
+}
+
+message G_Transaction{
+  int32 Oid = 1;
+  double Amount = 2;
+  string Description = 3;
+  google.protobuf.Timestamp DateCreated = 4;
+  google.protobuf.Timestamp DateTransaction = 5;
+  int32 AddedByUser = 6;
+  TransactionType Type = 7;
+  oneof Request{
+    G_CreditRequest Credit = 8;
+    G_DebitRequest Debit = 9;
+  }
+}
+
+message G_GetTransactionRequest{
+  int32 Oid = 1;
+}
+
+message G_GetTransactionResponse{
+  repeated G_Transaction Transactions = 1;
+}
+
+message G_ServiceCheckRequest{ }
+message G_ServiceCheckResponse{
+  google.protobuf.Timestamp CheckTime = 1;
+  oneof Response{
+    G_ServiceCheckResponseSuccess Success = 2;
+    G_ServiceCheckResponseFailure Failure = 3;
+  }
+}
+message G_ServiceCheckResponseSuccess{ string Result = 1; }
+message G_ServiceCheckResponseFailure{ string Reason = 1; }
+
+message G_AddTransactionRequest{
+    G_Transaction Transaction = 1;
+}
+
+message G_CreditRequest{
+  string Category = 1;
+}
+
+message G_DebitRequest{
+  string Category = 1;
+}
+
+enum TransactionType{
+  CASH = 0;
+  CHECK = 1;
+  CREDIT_CARD = 2;
+  DEBIT_CARD = 3;
+  TRANSFER = 4;
+  OTHER = 5;
+}
+
+message G_AddTransactionResponse{
+  oneof Response{
+    G_TransactionSuccessResponse Success = 1;
+    G_TransactionFailureResponse Failure = 2;
+  }
+}
+
+message G_TransactionSuccessResponse{
+  G_Transaction Transaction = 1;
+}
+
+message G_TransactionFailureResponse{
+  string Reason = 1;
+}

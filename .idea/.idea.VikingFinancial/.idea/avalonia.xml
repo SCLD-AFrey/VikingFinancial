@@ -3,7 +3,16 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="VikingFinancial.App.Gui/Views/MainApplication/MainWindowView.axaml" value="VikingFinancial.App.Gui/VikingFinancial.App.Gui.csproj" />
+        <entry key="VikingFinancial.App.Gui/VikingFinApp.axaml" value="VikingFinancial.App.Gui/VikingFinancial.App.Gui.csproj" />
+        <entry key="VikingFinancial.Gui/Views/FirstRunWizard/FirstRunWizardView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
+        <entry key="VikingFinancial.Gui/Views/FirstRunWizard/Pages/WelcomePageView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
+        <entry key="VikingFinancial.Gui/Views/MainApplication/MainWindow/LandingPageView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
+        <entry key="VikingFinancial.Gui/Views/MainApplication/MainWindow/MainWorkspaceView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
+        <entry key="VikingFinancial.Gui/Views/MainApplication/MainWindowView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
         <entry key="VikingFinancial.Gui/VikingFinGuiApp.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
+        <entry key="VikingFinancial.GuiApp/Views/MainWindow.axaml" value="VikingFinancial.GuiApp/VikingFinancial.GuiApp.csproj" />
+        <entry key="VikingFinancial.GuiApp/VikingApp.axaml" value="VikingFinancial.GuiApp/VikingFinancial.GuiApp.csproj" />
       </map>
     </option>
   </component>

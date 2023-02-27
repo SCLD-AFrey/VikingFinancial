@@ -47,11 +47,12 @@
     <ProjectReference Include="..\VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\MainWindowView.axaml.cs">
-      <DependentUpon>MainWindowView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="VikingFinGuiApp.axaml.cs">
       <DependentUpon>VikingFinGuiApp.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainApplication\MainWindowView.axaml.cs">
+      <DependentUpon>MainWindowView.axaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 </Project>
