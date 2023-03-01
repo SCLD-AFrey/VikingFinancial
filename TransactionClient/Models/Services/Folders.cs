@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System;
+using System.IO;
+using Microsoft.Extensions.Logging;
 
-namespace VikingFinancial.TransactionServer.Services.Global
+namespace TransactionClient.Models.Services
 {
     public class Folders
     {
@@ -16,16 +18,14 @@ namespace VikingFinancial.TransactionServer.Services.Global
         
         public string ProgramDataDirectoryPath =>
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-                ".VikingFinancialApp");
-
+                ".VikingTransactionClient");
+        
+        
         public string LogsDirectoryPath => Path.Combine(ProgramDataDirectoryPath, "logs");
-        public string DatabaseDirectoryPath => Path.Combine(ProgramDataDirectoryPath, "db");
-
         public void CreateRequiredFolders()
         {
             Directory.CreateDirectory(ProgramDataDirectoryPath);
             Directory.CreateDirectory(LogsDirectoryPath);
-            Directory.CreateDirectory(DatabaseDirectoryPath);
         }
     }
 }

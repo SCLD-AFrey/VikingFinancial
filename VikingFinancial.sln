@@ -5,9 +5,15 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VikingFinancial.Data.Transaction", "VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj", "{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Protos", "VikingFinancial.Protos\VikingFinancial.Protos.csproj", "{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VikingFinancial.Protos", "VikingFinancial.Protos\VikingFinancial.Protos.csproj", "{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingFinancial.Common", "VikingFinancial.Common\VikingFinancial.Common.csproj", "{DD57B11A-3540-4C74-833A-415677909889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VikingFinancial.Common", "VikingFinancial.Common\VikingFinancial.Common.csproj", "{DD57B11A-3540-4C74-833A-415677909889}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6C86CF96-7F2B-4216-A403-8EEC078FC548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService", "TransactionService\TransactionService.csproj", "{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionClient", "TransactionClient\TransactionClient.csproj", "{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +33,22 @@ Global
 		{DD57B11A-3540-4C74-833A-415677909889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD57B11A-3540-4C74-833A-415677909889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD57B11A-3540-4C74-833A-415677909889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF71E1C3-D1D5-41C2-B61B-4622A9B9B5EC} = {6C86CF96-7F2B-4216-A403-8EEC078FC548}
+		{17F82E2E-FC71-46BC-9295-D3E49DE3AAD6} = {6C86CF96-7F2B-4216-A403-8EEC078FC548}
+		{DD57B11A-3540-4C74-833A-415677909889} = {6C86CF96-7F2B-4216-A403-8EEC078FC548}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7252CBE-6F5B-424B-9ACF-E63A4A49B256}

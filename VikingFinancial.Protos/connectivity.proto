@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+package ValkyrieFinancial.Protos;
+
+option csharp_namespace="ValkyrieFinancial.Protos.Connectivity";
+
+service Connectivity{
+  rpc CheckServerConnection (G_ConnectCheckRequest) returns (G_ConnectCheckResponse);
+}
+
+// Check Server Connection
+
+message G_ConnectCheckRequest{}
+
+message G_ConnectCheckResponse{}

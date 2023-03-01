@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+
+package ValkyrieFinancial.Protos;
+
+option csharp_namespace="ValkyrieFinancial.Protos.Authorization";
+
+service Authorization{
+  rpc GetAuthorizationToken(G_AuthorizationRequest) returns (G_AuthorizationResponse);
+}
+
+message G_AuthorizationRequest{
+  string Username = 1;
+  string SessionId = 2;
+}
+
+message G_AuthorizationResponse{
+  oneof Response{
+    G_AuthorizationSuccessResponse Success = 1;
+    G_AuthorizationFailureResponse Failure = 2;
+  }
+}
+
+message G_AuthorizationSuccessResponse{
+  string Token = 1;
+  int64 Roles = 2;
+}
+
+message G_AuthorizationFailureResponse{
+  oneof Response{
+    G_AuthorizationFailureNoUserSessionResponse NoSessionResponse = 1;
+    G_AuthorizationFailureBadUserSessionResponse BadSessionResponse = 2;
+  }
+}
+
+message G_AuthorizationFailureNoUserSessionResponse { }
+
+message G_AuthorizationFailureBadUserSessionResponse { }

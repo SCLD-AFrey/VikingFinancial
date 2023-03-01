@@ -1,0 +1,71 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package ValkyrieFinancial.Protos;
+
+option csharp_namespace="ValkyrieFinancial.Protos.Authentication";
+
+service Authentication{
+  rpc ValidateCredentials(G_AuthenticationRequest) returns (G_AuthenticationResponse);
+  rpc CheckPasswordExpiration(G_PasswordExpirationRequest) returns (G_PasswordExpirationResponse);
+}
+
+message G_AuthenticationRequest{
+  string Username = 1;
+  string Password = 2;
+}
+
+message G_AuthenticationResponse{
+  oneof Response{
+    G_AuthenticationSuccessResponse Success = 1;
+    G_AuthenticationFailureResponse Failure = 2;
+  }
+}
+
+message G_AuthenticationSuccessResponse{
+  string SessionId = 1;
+}
+
+message G_AuthenticationFailureResponse{
+  oneof FailureResponse{
+    G_AuthenticationBadCredentialsResponse BadCredentials = 1;
+    G_AuthenticationTooManyAttemptsResponse TooManyAttempts = 2;
+    G_AuthenticationAlreadyLoggedInResponse AlreadyLoggedIn = 3;
+    G_AuthenticationExceedsNumberOfUsersResponse ExceedsAllowedUsers = 4;
+  }
+}
+
+message G_AuthenticationAlreadyLoggedInResponse{}
+
+message G_AuthenticationBadCredentialsResponse{}
+
+message G_AuthenticationExceedsNumberOfUsersResponse { }
+
+message G_AuthenticationTooManyAttemptsResponse{
+  google.protobuf.Timestamp UnlockTime = 1;
+}
+
+message G_PasswordExpirationRequest{
+  string Username = 1;
+}
+
+message G_PasswordExpirationResponse{
+  oneof PasswordExpirationResponse{
+    G_PasswordNotExpiredResponse NotExpired = 1;
+    G_PasswordExpiredResponse Expired = 2;
+  }
+}
+
+message G_PasswordNotExpiredResponse{}
+
+message G_PasswordExpiredResponse{
+  oneof PasswordExpiredResponse{
+    G_UserCanChangePasswordResponse UserCanChangePasswordResponse = 1;
+    G_AdminMustChangePasswordResponse AdminMustChangePasswordResponse  = 2;
+  }
+}
+
+message G_UserCanChangePasswordResponse{}
+
+message G_AdminMustChangePasswordResponse{}

@@ -1,0 +1,263 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:TransactionClient.ViewModels"
+        xmlns:material="using:Material.Icons.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        
+        SizeToContent="WidthAndHeight" CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        Background="LightGray"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome" 
+        ExtendClientAreaTitleBarHeightHint="-1" 
+        
+        x:Class="TransactionClient.Views.UserLoginView"
+        Title="User Login View">
+    <Design.DataContext>
+        <!-- ReSharper disable once Xaml.ConstructorWarning -->
+        <viewModels:UserLoginViewModel />
+    </Design.DataContext>
+    
+   <Window.Styles>
+       <Style Selector="Button.support">
+           <Setter Property="Background" Value="#ff006eff"/>
+       </Style>
+       
+       <Style Selector="Button.support:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+           <Setter Property="Background" Value="Goldenrod"/>
+       </Style>
+       
+       <Style Selector="Button.support:pressed /template/ ContentPresenter#PART_ContentPresenter">
+           <Setter Property="Background" Value="Gray"/>
+       </Style>
+       
+       <Style Selector="TextBlock">
+            <Setter Property="FontWeight" Value="DemiBold" />
+            <Setter Property="FontFamily" Value="{DynamicResource Oswald}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="TextBlock.loginVersion">
+            <Setter Property="FontSize" Value="8" />
+            <Setter Property="Foreground" Value="Gray" />
+        </Style>
+
+        <Style Selector="DataValidationErrors">
+            <Style.Resources>
+                <DataTemplate x:Key="InlineDataValidationErrorTemplate">
+                    <ItemsControl Items="{Binding}" x:DataType="DataValidationErrors">
+                        <ItemsControl.Styles>
+                            <Style Selector="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap" />
+                            </Style>
+                        </ItemsControl.Styles>
+                    </ItemsControl>
+                </DataTemplate>
+                <ControlTemplate x:Key="InlineDataValidationContentTemplate" TargetType="DataValidationErrors">
+                    <DockPanel LastChildFill="True">
+                        <ContentControl x:Name="InlineDataValidationContentControl"
+                                        Margin="0,4,0,0"
+                                        Content="{ReflectionBinding (DataValidationErrors.Errors)}"
+                                        ContentTemplate="{TemplateBinding ErrorTemplate}"
+                                        DataContext="{TemplateBinding Owner}"
+                                        DockPanel.Dock="Bottom"
+                                        IsVisible="{ReflectionBinding (DataValidationErrors.HasErrors)}" />
+                        <ContentPresenter Name="PART_ContentPresenter"
+                                          Padding="{TemplateBinding Padding}"
+                                          Background="{TemplateBinding Background}"
+                                          BorderThickness="{TemplateBinding BorderThickness}"
+                                          CornerRadius="{TemplateBinding CornerRadius}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </DockPanel>
+                </ControlTemplate>
+
+                <DataTemplate x:DataType="DataValidationErrors" x:Key="TooltipDataValidationErrorTemplate">
+                    <Panel Name="PART_InlineErrorTemplatePanel" Background="Transparent">
+                        <Panel.Styles>
+                            <Style Selector="Panel#PART_InlineErrorTemplatePanel">
+                                <Setter Property="Margin" Value="8,0" />
+                            </Style>
+                            <Style Selector="Panel#PART_InlineErrorTemplatePanel ToolTip">
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+                            </Style>
+                            <Style Selector="Panel#PART_InlineErrorTemplatePanel ToolTip TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap" />
+                            </Style>
+                        </Panel.Styles>
+                        <ToolTip.Tip>
+                            <ItemsControl Items="{Binding}" />
+                        </ToolTip.Tip>
+                        <Path Width="14"
+                              Height="14"
+                              Data="M14,7 A7,7 0 0,0 0,7 M0,7 A7,7 0 1,0 14,7 M7,3l0,5 M7,9l0,2"
+                              Stroke="{DynamicResource SystemControlErrorTextForegroundBrush}"
+                              StrokeThickness="2" />
+                    </Panel>
+                </DataTemplate>
+                <ControlTemplate x:Key="TooltipDataValidationContentTemplate" TargetType="DataValidationErrors">
+                    <DockPanel LastChildFill="True">
+                        <ContentControl Content="{ReflectionBinding (DataValidationErrors.Errors)}"
+                                        ContentTemplate="{TemplateBinding ErrorTemplate}"
+                                        DataContext="{TemplateBinding Owner}"
+                                        DockPanel.Dock="Right"
+                                        IsVisible="{ReflectionBinding (DataValidationErrors.HasErrors)}" />
+                        <ContentPresenter Name="PART_ContentPresenter"
+                                          Padding="{TemplateBinding Padding}"
+                                          Background="{TemplateBinding Background}"
+                                          BorderBrush="{TemplateBinding BorderBrush}"
+                                          BorderThickness="{TemplateBinding BorderThickness}"
+                                          CornerRadius="{TemplateBinding CornerRadius}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </DockPanel>
+                </ControlTemplate>
+            </Style.Resources>
+
+            <Setter Property="Template" Value="{StaticResource InlineDataValidationContentTemplate}" />
+            <Setter Property="ErrorTemplate" Value="{StaticResource InlineDataValidationErrorTemplate}" />
+        </Style>
+       
+       <Style Selector="TextBox.validationError DataValidationErrors">
+           <Setter Property="Template"
+                   Value="{DynamicResource TooltipDataValidationContentTemplate}" />
+           <Setter Property="ErrorTemplate"
+                   Value="{DynamicResource TooltipDataValidationErrorTemplate}" />
+       </Style>
+   </Window.Styles>
+
+    <Grid Width="450" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+        <Grid>
+            <Border Background="Black" CornerRadius="3" Opacity="0.15" />
+            <Border CornerRadius="2" Margin="1" Background="White" />
+        </Grid>
+        <Grid Margin="12" RowDefinitions="*,Auto,10">
+            <StackPanel Grid.Row="1" Orientation="Vertical" x:Name="ValidationContainer">
+                <Grid
+                    Margin="10" RowDefinitions="Auto,5,Auto,5,Auto,5,Auto" ColumnDefinitions="Auto,5,*">
+                    <TextBlock Grid.Row="0" Grid.Column="0">Server:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0">Pairing Key:</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0">User Name:</TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="0">Password:</TextBlock>
+                    <Grid Grid.Row="0" Grid.Column="2" ColumnDefinitions="*,Auto,Auto">
+                        <!-- ReSharper disable once Xaml.StyleClassNotFound -->
+                        <TextBox Grid.Column="0" TabIndex="0" Classes="clearButton validationError" 
+                                 VerticalContentAlignment="Center" x:Name="ServerAddress"
+                                 Text="{Binding ServerAddress}" MaxLength="255">
+                            <TextBox.IsEnabled>
+                                <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                    <Binding Path="!IsBusy"></Binding>
+                                    <Binding Path="!ShowPasswordChange"></Binding>
+                                </MultiBinding>
+                            </TextBox.IsEnabled>
+                        </TextBox>
+                        <TextBlock Grid.Column="1" Padding="5,0">Port:</TextBlock>
+                        <!-- ReSharper disable once Xaml.StyleClassNotFound -->
+                        <TextBox Grid.Column="2" TabIndex="1" Classes="clearButton validationError" 
+                                 VerticalContentAlignment="Center" x:Name="Port"
+                                 Text="{Binding Port}" MaxLength="5">
+                            <TextBox.IsEnabled>
+                                <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                    <Binding Path="!IsBusy"></Binding>
+                                    <Binding Path="!ShowPasswordChange"></Binding>
+                                </MultiBinding>
+                            </TextBox.IsEnabled>
+                        </TextBox>
+                    </Grid>
+                    <TextBox TabIndex="2" Classes="validationError" 
+                             Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center"
+                             x:Name="PairingKey"
+                             Text="{Binding PairingKey}" IsReadOnly="True">
+                        <TextBox.InnerRightContent>
+                            <Button Content="..."
+                                    Command="{ReflectionBinding ClickLoadPairingKey}"
+                                    CommandParameter="{ReflectionBinding $parent[Window]}" />
+                        </TextBox.InnerRightContent>
+                        <TextBox.IsEnabled>
+                            <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                <Binding Path="!IsBusy"></Binding>
+                                <Binding Path="!ShowPasswordChange"></Binding>
+                            </MultiBinding>
+                        </TextBox.IsEnabled>
+                    </TextBox>
+                    <!-- ReSharper disable once Xaml.StyleClassNotFound -->
+                    <TextBox TabIndex="3" Classes="clearButton validationError"
+                             x:Name="UserName"
+                             Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center"
+                             Text="{Binding UserName}" MaxLength="50">
+                        <TextBox.IsEnabled>
+                            <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                <Binding Path="!IsBusy"></Binding>
+                                <Binding Path="!ShowPasswordChange"></Binding>
+                            </MultiBinding>
+                        </TextBox.IsEnabled>
+                    </TextBox>
+                    <!-- ReSharper disable once Xaml.StyleClassNotFound -->
+                    <TextBox TabIndex="4" Classes="revealPasswordButton validationError" PasswordChar="•" 
+                             Grid.Row="6" Grid.Column="2" x:Name="UserPassword"
+                             VerticalContentAlignment="Center" MaxLength="255"
+                             Text="{Binding UserPassword}">
+                        <TextBox.IsEnabled>
+                            <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                <Binding Path="!IsBusy"></Binding>
+                                <Binding Path="!ShowPasswordChange"></Binding>
+                            </MultiBinding>
+                        </TextBox.IsEnabled>
+                    </TextBox>
+                </Grid>
+                <TextBlock Classes="error" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap"
+                           Foreground="IndianRed" x:Name="ErrorMessage" Text="{Binding ValidationError}">
+                </TextBlock>
+            </StackPanel>
+            <Grid Grid.Row="2" ColumnDefinitions="Auto,*" RowDefinitions="*,*">
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <Button Classes="support" Command="{ReflectionBinding ClickOpenDocumentation}" 
+                            TabIndex="8">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <material:MaterialIcon Margin="8, 0, 0, 0"
+                                                           Width="20"
+                                                           Height="{Binding $self.Bounds.Width}"
+                                                           Kind="BookOpenVariant"
+                                                           Foreground="White" />
+                                    <TextBlock Foreground="White" FontWeight="Heavy" Padding="3,0,0,0">Docs</TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                    <Button Classes="support" Command="{ReflectionBinding ClickOpenSupportPortal}"
+                            TabIndex="9">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <material:MaterialIcon Margin="8, 0, 0, 0"
+                                                           Width="20"
+                                                           Height="{Binding $self.Bounds.Width}"
+                                                           Kind="Support"
+                                                           Foreground="White" />
+                                    <TextBlock Foreground="White" FontWeight="Heavy" Padding="3,0,0,0">Support</TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{ReflectionBinding ClickLogin}" IsDefault="True" TabIndex="6"
+                            IsVisible="{Binding !ShowPasswordChange}"
+                            Content="Log In"
+                            CommandParameter="{ReflectionBinding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                    <Button Command="{ReflectionBinding ClickChangePassword}" IsDefault="True" TabIndex="6"
+                            IsVisible="{Binding ShowPasswordChange}"
+                            Content="Change Password"
+                            CommandParameter="{ReflectionBinding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                    <Button TabIndex="7" Command="{ReflectionBinding ClickCloseCommandCenter}">Close</Button>
+                </StackPanel>
+                <TextBlock Grid.Column="0" Margin="2,0" Classes="loginVersion" Grid.Row="1" Text="{Binding VersionNumber}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -6,7 +6,7 @@ public class Constants
 
     public class Ports
     {
-        public const int Grpc = 50001;
-        public const int GrpcSecure = 50002;
+        public const int TransactionServicePort = 50001;
+        public const int TransactionServicePortSecure = 50002;
     }
 }

@@ -3,6 +3,10 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="TransactionClient/TransactionClientApp.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/MainWindowView.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/MainWorkspaceView.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/UserLoginView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="VikingFinancial.App.Gui/Views/MainApplication/MainWindowView.axaml" value="VikingFinancial.App.Gui/VikingFinancial.App.Gui.csproj" />
         <entry key="VikingFinancial.App.Gui/VikingFinApp.axaml" value="VikingFinancial.App.Gui/VikingFinancial.App.Gui.csproj" />
         <entry key="VikingFinancial.Gui/Views/FirstRunWizard/FirstRunWizardView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />
