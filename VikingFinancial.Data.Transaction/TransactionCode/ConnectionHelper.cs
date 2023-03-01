@@ -26,7 +26,8 @@ namespace VikingFinancial.Data.Transaction
             typeof(Debit),
             typeof(Credit),
             typeof(BudgetItem),
-            typeof(AppVersion)
+            typeof(AppVersion),
+            typeof(TransactionType)
         };
         public static Type[] GetPersistentTypes()
         {

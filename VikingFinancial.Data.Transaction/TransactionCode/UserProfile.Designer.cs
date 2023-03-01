@@ -46,6 +46,13 @@ namespace VikingFinancial.Data.Transaction
             get { return fIsAdmin; }
             set { SetPropertyValue<bool>(nameof(IsAdmin), ref fIsAdmin, value); }
         }
+        bool fIsLocked;
+        [ColumnDefaultValue(false)]
+        public bool IsLocked
+        {
+            get { return fIsLocked; }
+            set { SetPropertyValue<bool>(nameof(IsLocked), ref fIsLocked, value); }
+        }
         [Association(@"TransactionReferencesUserProfile")]
         public XPCollection<Transaction> Transactions { get { return GetCollection<Transaction>(nameof(Transactions)); } }
     }

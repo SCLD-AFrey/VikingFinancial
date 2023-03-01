@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0d8c48cf-8a6a-4c5c-a527-2ca76f1c5746" namespace="VikingFinancial.Data.Transaction" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" connectionStringName="transactionConn" createdInVersion="22.1.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.1.6.0" name="transaction" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0d8c48cf-8a6a-4c5c-a527-2ca76f1c5746" namespace="VikingFinancial.Data.Transaction" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" connectionStringName="transactionConn" createdInVersion="22.1.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.1.6.0" name="transaction" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
   <classes>
     <dataBaseObjectModelHasClasses Id="1b5c6f92-08a3-4290-8ed8-7e5b50af1203">
       <xpObject Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" name="Transaction" baseClass="XPObject" userFileName="Transaction" designerFileName="Transaction.Designer" className="Transaction" virtualName="Transaction">
         <fields>
           <generalXpObjectHasFields Id="0d742edf-a9db-4f7d-99ab-03df3e0ca598">
             <field Id="cfdc8661-9f88-48f1-ba73-2ee7a915f6e4" name="Amount" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="9c2697bf-8f12-49b8-9a2b-56d73ef6db8f">
-            <field Id="2dcb2f0e-c93c-48c4-91fd-dce139f1cbf1" name="Desc" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="1317b9a8-9719-4874-94ea-02409740c8a8">
             <field Id="3d288a66-f5a1-4458-b642-5d9f7bb9eeec" name="Note" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
@@ -21,6 +18,9 @@
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="09532c87-75fb-4408-b96e-9cb74f29e0e6">
             <field Id="6c737d0c-5e4f-49f2-a5b9-46c3ab04b8aa" name="AddedByUser" virtualColumnType="UserProfile" logicalType="UserProfile" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="45e11eaa-d543-402b-a53a-5d9345440f16">
+            <field Id="bd6edc91-9e96-4fc5-8c96-091a3e93451d" name="Type" virtualColumnType="TransactionType" logicalType="TransactionType" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
       </xpObject>
@@ -67,6 +67,9 @@
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7900e58a-0068-448a-940f-092a416053b3">
             <field Id="b50b0235-699e-4b0e-8eab-ae3e3e5db491" name="IsAdmin" columnType="Boolean" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" defaultValue="Boolean#False" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7fe9deaa-7c05-42f7-a8a9-1b5419b260b3">
+            <field Id="ebdd170f-9e00-40d1-8e91-07a0e72bda32" name="IsLocked" columnType="Boolean" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" defaultValue="Boolean#False" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -159,6 +162,25 @@
             <field Id="262897d7-c015-4d3a-a0be-a4d113282421" name="VersionBuild" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="f9bbb348-057a-458b-a80b-3643a6c41325">
+      <xpObject Id="a8ad6328-f837-433a-bd04-fe3346ca390a" name="TransactionType" baseClass="XPObject" userFileName="TransactionType" designerFileName="TransactionType.Designer" className="TransactionType" virtualName="TransactionType">
+        <fields>
+          <generalXpObjectHasFields Id="6a9097d9-881f-457c-8e0d-55c3f94e9a3e">
+            <field Id="ae1ee3c3-c9b7-42b9-88cd-00ed47843e47" name="Title" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="f4c391c6-5113-42a6-861f-4843c3c09b73" sourceCollectionName="Transactions" name="TransactionReferencesTransactionType" targetFieldName="Type">
+            <xpObjectMoniker Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="0b04d4c1-02ca-4d19-8032-8548e1a2fe6a">
+            <collectionField Id="c2174ddc-111f-414f-8f73-4cb4aa736161" name="Transactions" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
       </xpObject>
     </dataBaseObjectModelHasClasses>
   </classes>

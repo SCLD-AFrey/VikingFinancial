@@ -24,12 +24,6 @@ namespace VikingFinancial.Data.Transaction
             get { return fAmount; }
             set { SetPropertyValue<double>(nameof(Amount), ref fAmount, value); }
         }
-        string fDesc;
-        public string Desc
-        {
-            get { return fDesc; }
-            set { SetPropertyValue<string>(nameof(Desc), ref fDesc, value); }
-        }
         string fNote;
         [Size(SizeAttribute.Unlimited)]
         public string Note
@@ -55,6 +49,13 @@ namespace VikingFinancial.Data.Transaction
         {
             get { return fAddedByUser; }
             set { SetPropertyValue<UserProfile>(nameof(AddedByUser), ref fAddedByUser, value); }
+        }
+        TransactionType fType;
+        [Association(@"TransactionReferencesTransactionType")]
+        public TransactionType Type
+        {
+            get { return fType; }
+            set { SetPropertyValue<TransactionType>(nameof(Type), ref fType, value); }
         }
     }
 

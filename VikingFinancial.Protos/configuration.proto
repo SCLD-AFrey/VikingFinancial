@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package ValkyrieFinancial.Protos;
+
+option csharp_namespace="ValkyrieFinancial.Protos.Configuration";
+
+service ConfigurationService {
+}

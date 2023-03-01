@@ -2,15 +2,38 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
-package valkyriefinancial.protos.transactions;
+package ValkyrieFinancial.Protos;
 
-option csharp_namespace="valkyriefinancial.protos.transactions";
+option csharp_namespace="ValkyrieFinancial.Protos.Transactions";
 
 
 service TransactionsService {
   rpc GetServiceCheck(G_ServiceCheckRequest) returns (G_ServiceCheckResponse) {}
   rpc AddTransaction(G_AddTransactionRequest) returns (G_AddTransactionResponse) {}
   rpc GetTransactions(G_GetTransactionRequest) returns (G_GetTransactionResponse) {}
+  rpc GetDetails(G_DetailsRequest) returns (G_DetailsResponse) {}
+}
+
+message G_DetailsRequest{
+  google.protobuf.Timestamp StartDate = 1;
+  google.protobuf.Timestamp EndDate = 2;
+}
+
+message G_DetailsResponse{
+  oneof Response{
+    G_DetailsSuccess Success = 1;
+    G_DetailsFailure Failure = 2;
+  }
+}
+
+message G_DetailsSuccess{
+  double Balance = 1;
+  repeated G_Transaction Transactions = 2;
+  google.protobuf.Timestamp StartDate = 3;
+  google.protobuf.Timestamp EndDate = 4;
+}
+message G_DetailsFailure{
+  string Reason = 1;
 }
 
 message G_Transaction{
@@ -20,7 +43,6 @@ message G_Transaction{
   google.protobuf.Timestamp DateCreated = 4;
   google.protobuf.Timestamp DateTransaction = 5;
   int32 AddedByUser = 6;
-  TransactionType Type = 7;
   oneof Request{
     G_CreditRequest Credit = 8;
     G_DebitRequest Debit = 9;
@@ -56,15 +78,6 @@ message G_CreditRequest{
 
 message G_DebitRequest{
   string Category = 1;
-}
-
-enum TransactionType{
-  CASH = 0;
-  CHECK = 1;
-  CREDIT_CARD = 2;
-  DEBIT_CARD = 3;
-  TRANSFER = 4;
-  OTHER = 5;
 }
 
 message G_AddTransactionResponse{

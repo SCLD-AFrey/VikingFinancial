@@ -3,11 +3,12 @@ using DevExpress.Data.Filtering;
 using DevExpress.Xpo;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Microsoft.Extensions.Logging;
 using ValkyrieFinancial.Protos.Transactions;
 using VikingFinancial.Data.Transaction;
-using VikingFinancial.WebController.Services.Database;
+using VikingFinancial.TransactionServer.Services.Database;
 
-namespace VikingFinancial.WebController.Services
+namespace VikingFinancial.TransactionServer.Services
 {
     public class TransactionService : TransactionsService.TransactionsServiceBase
     {
