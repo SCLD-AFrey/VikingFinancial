@@ -1,0 +1,89 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TransactionNavigator.ViewModels"
+        xmlns:converters="clr-namespace:TransactionNavigator.Views.Converters"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TransactionNavigator.Views.MainWindowView"
+        Title="{Binding WindowTitle}"
+        Closing="MainWindow_OnClosing"
+        WindowState="Maximized">
+
+    <Design.DataContext>
+        <!-- ReSharper disable once Xaml.ConstructorWarning -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+    
+    <Window.Resources>
+        <converters:LogEventLevelToImageConverter x:Key="LogEventLevelToImageConverter" />
+        <converters:LogEventLevelToColorConverter x:Key="LogEventLevelToColorConverter" />
+    </Window.Resources>
+    
+    <Window.Styles>
+        <Style Selector="ListBox.console">
+            <Setter Property="FontFamily" Value="Consolas"/>
+        </Style>
+        <Style Selector="ListBoxItem">
+            <Setter Property="Padding" Value="10,4,10,2"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7"/>
+            <RowDefinition Height=".2*"
+                           MaxHeight="200"/>
+        </Grid.RowDefinitions>
+        <Carousel Grid.Row="0"
+                  Grid.RowSpan="2"
+                  IsVirtualized="True"
+                  SelectedIndex="{Binding SelectedPageIndex}">
+            <Carousel.PageTransition>
+                <CrossFade Duration="0.25"/>
+            </Carousel.PageTransition>
+            <ContentControl Content="{Binding WelcomePageView}"/>
+            <ContentControl Content="{Binding MainWorkspaceView}"/>
+            <Grid Background="Blue"/>
+        </Carousel>
+        <GridSplitter Grid.Row="1"
+                      Classes="horizontal" />
+        <ListBox Grid.Row="2"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 Classes="console"
+                 AutoScrollToSelectedItem="True"
+                 SelectionMode="Multiple"
+                 SelectedItems="{Binding SelectedMessages}"
+                 Items="{Binding Messages}">
+            <ListBox.Background>
+                <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,7.5%">
+                    <GradientStop Color="#1f000000" Offset="0" />
+                    <GradientStop Offset="1" />
+                </LinearGradientBrush>
+            </ListBox.Background>
+            <ListBox.ContextFlyout>
+                <MenuFlyout>
+                    <MenuItem Header="Copy Message..."
+                              Command="{Binding CopyMessages}" />
+                </MenuFlyout>
+            </ListBox.ContextFlyout>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="Auto,*">
+                        <avalonia:MaterialIcon Grid.Column="0" Margin="0, 0, 2, 0"
+                                               Width="18"
+                                               Height="{Binding $self.Bounds.Width}"
+                                               Kind="{Binding LogLevel, Converter={StaticResource LogEventLevelToImageConverter}}"
+                                               Foreground="{Binding LogLevel, Converter={StaticResource LogEventLevelToColorConverter}}" />
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap"
+                                   Text="{Binding Text}" 
+                                   Foreground="{Binding LogLevel, Converter={StaticResource LogEventLevelToColorConverter}}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+</Window>

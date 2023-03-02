@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6C86CF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService", "TransactionService\TransactionService.csproj", "{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionClient", "TransactionClient\TransactionClient.csproj", "{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionNavigator", "TransactionNavigator\TransactionNavigator.csproj", "{94461636-4BD3-44EE-9A61-B5DE6DA102D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC0EA668-4E4D-42BE-A7A3-30C155E129DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94461636-4BD3-44EE-9A61-B5DE6DA102D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94461636-4BD3-44EE-9A61-B5DE6DA102D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94461636-4BD3-44EE-9A61-B5DE6DA102D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94461636-4BD3-44EE-9A61-B5DE6DA102D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

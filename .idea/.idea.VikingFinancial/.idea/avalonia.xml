@@ -7,6 +7,20 @@
         <entry key="TransactionClient/Views/MainWindowView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/MainWorkspaceView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/UserLoginView.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionNavigator/App.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/Controls/HamburgerButton.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/Controls/PageHeader.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/LandingPageView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainApplication/BalanaceView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainApplication/BalanceView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainApplication/LandingPageView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainApplication/SettingsView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainApplication/TransactionsView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainWindowView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/MainWorkspaceView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/SettingsView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/UserLoginView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
+        <entry key="TransactionNavigator/Views/WelcomePageView.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
         <entry key="VikingFinancial.App.Gui/Views/MainApplication/MainWindowView.axaml" value="VikingFinancial.App.Gui/VikingFinancial.App.Gui.csproj" />
         <entry key="VikingFinancial.App.Gui/VikingFinApp.axaml" value="VikingFinancial.App.Gui/VikingFinancial.App.Gui.csproj" />
         <entry key="VikingFinancial.Gui/Views/FirstRunWizard/FirstRunWizardView.axaml" value="VikingFinancial.Gui/VikingFinancial.Gui.csproj" />

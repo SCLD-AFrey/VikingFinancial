@@ -1,0 +1,28 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="TransactionNavigator.Views.Controls.PageHeader">
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <Border Height="50"
+                    Background="DimGray"
+                    BorderThickness="0,0,0,1"
+                    BorderBrush="DimGray"
+                    Padding="10, 0, 0, 0">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left" 
+                               FontFamily="{StaticResource Oswald}"
+                               FontWeight="SemiBold"
+                               FontSize="28"
+                               Foreground="White"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Text="{Binding HeaderText, ElementName=Root}"/>
+                    <ContentControl DockPanel.Dock="Left" HorizontalAlignment="Stretch" Content="{Binding CustomContent, ElementName=Root}"/>
+                </DockPanel>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

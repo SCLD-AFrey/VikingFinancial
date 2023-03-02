@@ -4,12 +4,13 @@ package ValkyrieFinancial.Protos;
 
 option csharp_namespace="ValkyrieFinancial.Protos.Connectivity";
 
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
 service Connectivity{
-  rpc CheckServerConnection (G_ConnectCheckRequest) returns (G_ConnectCheckResponse);
+  rpc CheckServerConnection (google.protobuf.Empty) returns (G_ConnectCheckResponse);
 }
 
-// Check Server Connection
-
-message G_ConnectCheckRequest{}
-
-message G_ConnectCheckResponse{}
+message G_ConnectCheckResponse{
+  google.protobuf.Timestamp timestamp = 1;
+}
