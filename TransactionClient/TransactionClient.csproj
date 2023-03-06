@@ -34,7 +34,6 @@
         <PackageReference Include="Grpc.Tools" Version="2.43.0" PrivateAssets="All" />
 
         <PackageReference Include="Material.Icons.Avalonia" Version="1.0.2" />
-        <PackageReference Include="MessageBox.Avalonia" Version="2.1.0" />
 
         <PackageReference Include="ReactiveUI.Fody" Version="17.1.50" />
         <PackageReference Include="ReactiveUI.Validation" Version="2.2.1" />

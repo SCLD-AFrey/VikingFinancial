@@ -16,9 +16,6 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Threading;
 using Grpc.Core;
-using MessageBox.Avalonia.DTO;
-using MessageBox.Avalonia.Enums;
-using MessageBox.Avalonia.Models;
 
 using Microsoft.Extensions.Logging;
 
@@ -102,49 +99,7 @@ public partial class TransactionClientApp : Application
                      .WriteTo.RollingFile(new JsonFormatter(), filesService.LogFilePath, retainedFileCountLimit: 31)
                      .CreateLogger();
     
-        AppDomain.CurrentDomain.UnhandledException += (_, p_eventArgs) =>
-                                                      {
-                                                          Log.Debug("Unhandled Exception: {ErrorMessage}",
-                                                                    ((Exception)p_eventArgs.ExceptionObject).Message);
-                                                      };
-    
-        AppDomain.CurrentDomain.FirstChanceException += async (_, p_eventArgs) =>
-                                                        {
-                                                            Log.Debug("First chance exception: {ErrorMessage}",
-                                                                      p_eventArgs.Exception.Message);
-    
-                                                          
-                                                            await Dispatcher.UIThread.InvokeAsync(async () =>
-                                                            {
-                                                                var assemblyName = Assembly.GetEntryAssembly()!.GetName().Name;
-                                                                var assets       = AvaloniaLocator.Current.GetService<IAssetLoader>();
-                                                                var windowIcon   = new Bitmap(assets!.Open(new Uri($"avares://{assemblyName}/Assets/newShield.ico")));
-                                                                
-                                                                var messageBoxStandardWindow = MessageBox.Avalonia.MessageBoxManager
-                                                                    .GetMessageBoxCustomWindow(new MessageBoxCustomParams
-                                                                        {
-                                                                            ContentTitle = "Commander Disconnected",
-                                                                            WindowIcon = new WindowIcon(windowIcon),
-                                                                            ContentMessage = "Commander has become unreachable. Client will close.",
-                                                                            ButtonDefinitions = new[]
-                                                                                {
-                                                                                    new ButtonDefinition
-                                                                                    {
-                                                                                        Name      = "Exit",
-                                                                                        IsDefault = true
-                                                                                    }
-                                                                                },
-                                                                            Icon                  = Icon.Error,
-                                                                            WindowStartupLocation = WindowStartupLocation.CenterScreen,
-                                                                            CanResize             = false,
-                                                                            Topmost               = true,
-                                                                            ShowInCenter          = true,
-                                                                            SystemDecorations     = SystemDecorations.Full
-                                                                        });
-                                                                await messageBoxStandardWindow.Show();
-                                                            });
-                                                            Environment.Exit(0);
-                                                        };
+        Log.Logger.Information("Starting application");
     
         await m_appHost.StartAsync();
     
