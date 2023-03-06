@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Models\" />
+        <AvaloniaResource Include="Assets\**" />
+        <None Remove=".gitignore" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <TrimmerRootDescriptor Include="Roots.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.10.18" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
+        <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
+
+        <PackageReference Include="Google.Protobuf" Version="3.19.4" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.42.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.43.0" PrivateAssets="All" />
+
+        <PackageReference Include="Google.Protobuf" Version="3.19.4" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.42.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.43.0" PrivateAssets="All" />
+
+        <PackageReference Include="Material.Icons.Avalonia" Version="1.0.2" />
+        <PackageReference Include="MessageBox.Avalonia" Version="2.1.0" />
+
+        <PackageReference Include="ReactiveUI.Fody" Version="17.1.50" />
+        <PackageReference Include="ReactiveUI.Validation" Version="2.2.1" />
+
+        <PackageReference Include="Serilog" Version="2.10.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+        <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-preview.1.23110.8" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+
+        <PackageReference Include="TextCopy" Version="6.1.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="..\VikingFinancial.Protos\connectivity.proto">
+            <Link>Protos\connectivity.proto</Link>
+            <GrpcServices>Client</GrpcServices>
+        </Protobuf>
+        <Protobuf Include="..\VikingFinancial.Protos\transaction.proto">
+            <Link>Protos\transaction.proto</Link>
+            <GrpcServices>Client</GrpcServices>
+        </Protobuf>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\VikingFinancial.Common\VikingFinancial.Common.csproj" />
+        <ProjectReference Include="..\VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj" />
+    </ItemGroup>
+</Project>
