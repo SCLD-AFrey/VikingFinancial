@@ -5,11 +5,13 @@
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
-    </PropertyGroup>
+  </PropertyGroup>
 
     <ItemGroup>
+        <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
+        <Folder Include="Views\Controls" />
         <None Remove=".gitignore" />
     </ItemGroup>
 
@@ -62,5 +64,11 @@
     <ItemGroup>
         <ProjectReference Include="..\VikingFinancial.Common\VikingFinancial.Common.csproj" />
         <ProjectReference Include="..\VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\..\AppData\Roaming\Microsoft\UserSecrets\5ec1930b-2346-4588-9369-acd89c3d5c0d\secrets.json">
+        <Link>secrets.json</Link>
+      </Content>
     </ItemGroup>
 </Project>

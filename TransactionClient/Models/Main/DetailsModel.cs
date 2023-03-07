@@ -1,6 +1,13 @@
-﻿namespace TransactionClient.Models.Main;
+﻿using Microsoft.Extensions.Logging;
+
+namespace TransactionClient.Models.Main;
 
 public class DetailsModel
 {
-    
+    private readonly ILogger<DetailsModel>      m_logger;
+
+    public DetailsModel(ILogger<DetailsModel> p_logger)
+    {
+        m_logger = p_logger;
+    }
 }

@@ -10,4 +10,14 @@
         <!-- ReSharper disable once Xaml.ConstructorWarning -->
         <main:DetailsViewModel />
     </Design.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Balance Details" Grid.Row="0"></TextBlock>
+        
+    </Grid>
 </UserControl>

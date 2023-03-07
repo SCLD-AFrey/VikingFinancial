@@ -29,9 +29,7 @@ using TransactionClient.ViewModels;
 using TransactionClient.Views;
 using TransactionClient.Models;
 using TransactionClient.Models.DataStructures;
-using TransactionClient.Models.Interceptors;
 using TransactionClient.Models.Main;
-using TransactionClient.Models.ServerInteraction;
 using TransactionClient.Models.Services;
 using TransactionClient.ViewModels.Main;
 using TransactionClient.Views.Main;
@@ -41,15 +39,9 @@ namespace TransactionClient;
 public partial class TransactionClientApp : Application
 {
     private readonly IHost m_appHost;
-    public static ServerCredentials? ServerCredentials { get; set; }
     
     public TransactionClientApp()
     {
-        ServerCredentials = new ServerCredentials()
-        {
-            ServerAddress = Constants.HostAddress,
-            ServerPort    = Constants.Ports.TransactionServicePortSecure
-        };
 
         m_appHost = Host.CreateDefaultBuilder()
             .ConfigureLogging(p_options =>
@@ -62,12 +54,8 @@ public partial class TransactionClientApp : Application
 
     private void ConfigureServices(IServiceCollection p_services)
     {
-        p_services.AddTransient<ErrorHandlerInterceptor>();
         p_services.AddSingleton<Folders>();
         p_services.AddSingleton<Files>();
-        p_services.AddSingleton<ServerInfo>();
-        p_services.AddSingleton<ClientProvisioner>();
-        p_services.AddSingleton<Connectivity>();
 
         p_services.AddSingleton<MainWindow>();
         p_services.AddSingleton<MainWindowViewModel>();

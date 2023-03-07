@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="TransactionClient/TransactionClientApp.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/Controls/PageHeader.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Main/DetailsView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Main/TransactionsView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/MainWindow.axaml" value="TransactionClient/TransactionClient.csproj" />

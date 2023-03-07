@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using TransactionClient.ViewModels;
 
 namespace TransactionClient.Views;
-
 public partial class MainWindow : Window
 {
     private readonly ILogger<MainWindow> m_logger;
