@@ -21,9 +21,6 @@ using Microsoft.Extensions.Logging;
 
 using Serilog.Events;
 using Serilog.Formatting.Json;
-using ValkyrieFinancial.Protos.Transactions;
-using VikingFinancial.Common;
-
 
 using TransactionClient.ViewModels;
 using TransactionClient.Views;
@@ -51,11 +48,14 @@ public partial class TransactionClientApp : Application
             })
             .ConfigureServices(ConfigureServices).Build();
     }
+    
 
     private void ConfigureServices(IServiceCollection p_services)
     {
         p_services.AddSingleton<Folders>();
         p_services.AddSingleton<Files>();
+        p_services.AddSingleton<ServerInfo>();
+        p_services.AddSingleton<ClientProvisioner>();
 
         p_services.AddSingleton<MainWindow>();
         p_services.AddSingleton<MainWindowViewModel>();

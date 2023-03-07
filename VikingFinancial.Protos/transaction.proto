@@ -4,11 +4,10 @@ import "google/protobuf/timestamp.proto";
 
 package ValkyrieFinancial.Protos;
 
-option csharp_namespace="ValkyrieFinancial.Protos.Transactions";
+option csharp_namespace="ValkyrieFinancial.Protos";
 
 
 service TransactionsService {
-  rpc GetServiceCheck(G_ServiceCheckRequest) returns (G_ServiceCheckResponse) {}
   rpc AddTransaction(G_AddTransactionRequest) returns (G_AddTransactionResponse) {}
   rpc GetTransactions(G_GetTransactionRequest) returns (G_GetTransactionResponse) {}
   rpc GetDetails(G_DetailsRequest) returns (G_DetailsResponse) {}
@@ -56,17 +55,6 @@ message G_GetTransactionRequest{
 message G_GetTransactionResponse{
   repeated G_Transaction Transactions = 1;
 }
-
-message G_ServiceCheckRequest{ }
-message G_ServiceCheckResponse{
-  google.protobuf.Timestamp CheckTime = 1;
-  oneof Response{
-    G_ServiceCheckResponseSuccess Success = 2;
-    G_ServiceCheckResponseFailure Failure = 3;
-  }
-}
-message G_ServiceCheckResponseSuccess{ string Result = 1; }
-message G_ServiceCheckResponseFailure{ string Reason = 1; }
 
 message G_AddTransactionRequest{
     G_Transaction Transaction = 1;

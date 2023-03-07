@@ -17,7 +17,7 @@ public class Folders
     
     public string DataDirectoryPath => 
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-            ".VikingTransactionNavigator");
+            ".VikingTransactionClient");
 
 
     public string LogsDirectoryPath => Path.Combine(DataDirectoryPath, "logs");

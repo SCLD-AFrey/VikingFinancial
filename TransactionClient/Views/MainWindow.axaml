@@ -19,6 +19,7 @@
     <Window.Resources>
         <converters:LogEventLevelToImageConverter x:Key="LogEventLevelToImageConverter" />
         <converters:LogEventLevelToColorConverter x:Key="LogEventLevelToColorConverter" />
+        <converters:OnlineBrushColorConverter x:Key="OnlineBrushColorConverter"></converters:OnlineBrushColorConverter>
     </Window.Resources>
     
     <Window.Styles>
@@ -40,6 +41,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="7"/>
             <RowDefinition Height=".2*" MaxHeight="200"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         <Grid Grid.Row="0" 
@@ -100,6 +102,12 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        
+        <StackPanel Grid.Row="3" Background="{Binding IsOnline, Converter={StaticResource OnlineBrushColorConverter}}" HorizontalAlignment="Center">
+            <TextBlock Text="Online" IsVisible="{Binding IsOnline}"></TextBlock>
+            <TextBlock Text="Offline" IsVisible="{Binding !IsOnline}"></TextBlock>
+        </StackPanel>
+        
     </Grid>
 
 </Window>

@@ -59,6 +59,10 @@
             <Link>Protos\transaction.proto</Link>
             <GrpcServices>Client</GrpcServices>
         </Protobuf>
+        <Protobuf Include="..\VikingFinancial.Protos\user.proto">
+            <Link>Protos\user.proto</Link>
+            <GrpcServices>Client</GrpcServices>
+        </Protobuf>
     </ItemGroup>
 
     <ItemGroup>
