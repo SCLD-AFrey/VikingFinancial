@@ -21,15 +21,14 @@ using Microsoft.Extensions.Logging;
 
 using Serilog.Events;
 using Serilog.Formatting.Json;
-
+using TransactionClient.Models;
 using TransactionClient.ViewModels;
 using TransactionClient.Views;
-using TransactionClient.Models;
 using TransactionClient.Models.DataStructures;
-using TransactionClient.Models.Main;
 using TransactionClient.Models.Services;
-using TransactionClient.ViewModels.Main;
-using TransactionClient.Views.Main;
+using TransactionClient.ViewModels.Controls;
+using TransactionClient.Views.Controls;
+
 
 namespace TransactionClient;
 
@@ -59,15 +58,14 @@ public partial class TransactionClientApp : Application
 
         p_services.AddSingleton<MainWindow>();
         p_services.AddSingleton<MainWindowViewModel>();
-        p_services.AddSingleton<MainWindowModel>();
         
+        p_services.AddSingleton<DetailsModel>();
         p_services.AddSingleton<DetailsView>();
         p_services.AddSingleton<DetailsViewModel>();
-        p_services.AddSingleton<DetailsModel>();
         
-        p_services.AddSingleton<TransactionsView>();
-        p_services.AddSingleton<TransactionsViewModel>();
-        p_services.AddSingleton<TransactionsModel>();
+        p_services.AddSingleton<TransactionModel>();
+        p_services.AddSingleton<TransactionView>();
+        p_services.AddSingleton<TransactionViewModel>();
     }
 
     public override void Initialize()

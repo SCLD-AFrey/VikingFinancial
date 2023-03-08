@@ -11,7 +11,7 @@
         <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
-        <Folder Include="Views\Controls" />
+        <Folder Include="Views\Main" />
         <None Remove=".gitignore" />
     </ItemGroup>
 
@@ -67,7 +67,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\VikingFinancial.Common\VikingFinancial.Common.csproj" />
-        <ProjectReference Include="..\VikingFinancial.Data.Transaction\VikingFinancial.Data.Transaction.csproj" />
     </ItemGroup>
 
     <ItemGroup>

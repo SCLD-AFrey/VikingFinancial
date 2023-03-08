@@ -57,6 +57,13 @@ namespace VikingFinancial.Data.Transaction
             get { return fType; }
             set { SetPropertyValue<TransactionType>(nameof(Type), ref fType, value); }
         }
+        TransactionCategory fCategory;
+        [Association(@"TransactionReferencesTransactionCategory")]
+        public TransactionCategory Category
+        {
+            get { return fCategory; }
+            set { SetPropertyValue<TransactionCategory>(nameof(Category), ref fCategory, value); }
+        }
     }
 
 }

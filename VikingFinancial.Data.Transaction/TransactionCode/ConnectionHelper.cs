@@ -20,14 +20,10 @@ namespace VikingFinancial.Data.Transaction
     {
         static Type[] persistentTypes = new Type[] {
             typeof(Transaction),
-            typeof(DebitCategory),
             typeof(UserProfile),
-            typeof(CreditCategory),
-            typeof(Debit),
-            typeof(Credit),
-            typeof(BudgetItem),
             typeof(AppVersion),
-            typeof(TransactionType)
+            typeof(TransactionType),
+            typeof(TransactionCategory)
         };
         public static Type[] GetPersistentTypes()
         {

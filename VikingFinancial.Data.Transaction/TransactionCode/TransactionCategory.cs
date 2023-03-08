@@ -8,9 +8,9 @@ using System.Reflection;
 namespace VikingFinancial.Data.Transaction
 {
 
-    public partial class Credit
+    public partial class TransactionCategory
     {
-        public Credit(Session session) : base(session) { }
+        public TransactionCategory(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 

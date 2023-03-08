@@ -8,31 +8,27 @@ option csharp_namespace="ValkyrieFinancial.Protos";
 
 
 service TransactionsService {
-  rpc AddTransaction(G_AddTransactionRequest) returns (G_AddTransactionResponse) {}
-  rpc GetTransactions(G_GetTransactionRequest) returns (G_GetTransactionResponse) {}
-  rpc GetDetails(G_DetailsRequest) returns (G_DetailsResponse) {}
+  rpc GetTransactionRange(GetTransactionRangeRequest) returns (GetTransactionRangeResponse) {}
 }
 
-message G_DetailsRequest{
+message GetTransactionRangeRequest{
   google.protobuf.Timestamp StartDate = 1;
   google.protobuf.Timestamp EndDate = 2;
 }
 
-message G_DetailsResponse{
+message GetTransactionRangeResponse{
   oneof Response{
-    G_DetailsSuccess Success = 1;
-    G_DetailsFailure Failure = 2;
+    G_TransactionRange TransactionRange = 1;
+    G_Error Error = 2;
   }
 }
 
-message G_DetailsSuccess{
-  double Balance = 1;
-  repeated G_Transaction Transactions = 2;
-  google.protobuf.Timestamp StartDate = 3;
-  google.protobuf.Timestamp EndDate = 4;
+message G_TransactionRange{
+  repeated G_Transaction Transactions = 1;
 }
-message G_DetailsFailure{
-  string Reason = 1;
+
+message G_Error{
+  string Message = 1;
 }
 
 message G_Transaction{
@@ -42,43 +38,7 @@ message G_Transaction{
   google.protobuf.Timestamp DateCreated = 4;
   google.protobuf.Timestamp DateTransaction = 5;
   int32 AddedByUser = 6;
-  oneof Request{
-    G_CreditRequest Credit = 8;
-    G_DebitRequest Debit = 9;
-  }
+  string Type = 7;
+  string Category = 8;
 }
 
-message G_GetTransactionRequest{
-  int32 Oid = 1;
-}
-
-message G_GetTransactionResponse{
-  repeated G_Transaction Transactions = 1;
-}
-
-message G_AddTransactionRequest{
-    G_Transaction Transaction = 1;
-}
-
-message G_CreditRequest{
-  string Category = 1;
-}
-
-message G_DebitRequest{
-  string Category = 1;
-}
-
-message G_AddTransactionResponse{
-  oneof Response{
-    G_TransactionSuccessResponse Success = 1;
-    G_TransactionFailureResponse Failure = 2;
-  }
-}
-
-message G_TransactionSuccessResponse{
-  G_Transaction Transaction = 1;
-}
-
-message G_TransactionFailureResponse{
-  string Reason = 1;
-}

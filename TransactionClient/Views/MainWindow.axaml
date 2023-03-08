@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:converters="clr-namespace:TransactionClient.Views.Converters"
-        xmlns:main="clr-namespace:TransactionClient.Views.Main"
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:controls="clr-namespace:TransactionClient.Views.Controls"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TransactionClient.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -54,13 +54,13 @@
             </Grid.ColumnDefinitions>
             
             <StackPanel Grid.Row="0" Grid.Column="0">
-                <main:TransactionsView/>
+                <controls:TransactionView/>
             </StackPanel>
         
             <GridSplitter Grid.Row="0" Grid.Column="1" Width="5" HorizontalAlignment="Stretch"  />
 
             <StackPanel Grid.Row="0" Grid.Column="2">
-                <main:DetailsView/>
+                <controls:DetailsView/>
             </StackPanel>
         </Grid>
         

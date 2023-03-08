@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VikingFinancial.Common", "V
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6C86CF96-7F2B-4216-A403-8EEC078FC548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService", "TransactionService\TransactionService.csproj", "{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionService", "TransactionService\TransactionService.csproj", "{F8C45F23-9ED4-43B1-9F4C-8EE01428AFE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionNavigator", "TransactionNavigator\TransactionNavigator.csproj", "{94461636-4BD3-44EE-9A61-B5DE6DA102D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionNavigator", "TransactionNavigator\TransactionNavigator.csproj", "{94461636-4BD3-44EE-9A61-B5DE6DA102D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionClient", "TransactionClient\TransactionClient.csproj", "{B1A80AB2-9011-4ABA-8EA1-DBD64292678E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionClient", "TransactionClient\TransactionClient.csproj", "{B1A80AB2-9011-4ABA-8EA1-DBD64292678E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
