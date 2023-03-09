@@ -44,31 +44,32 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <Grid Grid.Row="0" 
-              Grid.RowSpan="2">
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
-            
-            <StackPanel Grid.Row="0" Grid.Column="0">
-                <controls:TransactionView/>
-            </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         
-            <GridSplitter Grid.Row="0" Grid.Column="1" Width="5" HorizontalAlignment="Stretch"  />
-
-            <StackPanel Grid.Row="0" Grid.Column="2">
-                <controls:DetailsView/>
-            </StackPanel>
-        </Grid>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+            <TextBlock Text="Side"></TextBlock>
+            <Button Name="BtnStartPage">Home</Button>
+            <Button Name="BtnTransactions">Trans</Button>
+            <Button Name="BtnShowDetail">Detail</Button>
+            <Button Name="BtnSettings">Settings</Button>
+        </StackPanel>
         
-        <!-- <ContentControl Content="{Binding WelcomePageView}"/> -->
+        <Carousel Name="Carousel" Grid.Row="0" Grid.Column="1">
+            <Carousel.PageTransition>
+                <PageSlide Duration="0.25" Orientation="Horizontal" />
+            </Carousel.PageTransition>
+            <controls:HomeView></controls:HomeView>
+            <controls:TransactionListView></controls:TransactionListView>
+            <controls:DetailView></controls:DetailView>
+            <controls:SettingView></controls:SettingView>
+        </Carousel>
             
-        <GridSplitter Grid.Row="1"
+        <GridSplitter Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"
                       Classes="horizontal" />
-        <ListBox Grid.Row="2"
+        <ListBox Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  Classes="console"
                  AutoScrollToSelectedItem="True"
@@ -103,7 +104,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         
-        <StackPanel Grid.Row="3" Background="{Binding IsOnline, Converter={StaticResource OnlineBrushColorConverter}}" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0"
+                    Background="{Binding IsOnline, Converter={StaticResource OnlineBrushColorConverter}}" HorizontalAlignment="Center">
             <TextBlock Text="Online" IsVisible="{Binding IsOnline}"></TextBlock>
             <TextBlock Text="Offline" IsVisible="{Binding !IsOnline}"></TextBlock>
         </StackPanel>

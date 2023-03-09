@@ -27,8 +27,9 @@ public class MainWindowViewModel : ViewModelBase
         m_logger.LogDebug("Instantiating MainWindowViewModel");
         WindowTitle = $"Transaction Navigator";
         CollectionSink.SetCollection(Messages);
-        CheckConnection();
+        //CheckConnection();
     }
+    [Reactive] public int SelectedIndex { get; set; } = 0;
     [Reactive] public string WindowTitle { get; set; }
     [Reactive] public bool IsOnline { get; set; } = false;
     [Reactive] public string OnlineMessage { get; set; } = "";

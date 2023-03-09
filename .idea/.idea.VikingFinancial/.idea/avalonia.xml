@@ -4,8 +4,13 @@
     <option name="projectPerEditor">
       <map>
         <entry key="TransactionClient/TransactionClientApp.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/Controls/Common/PageHeader.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/Controls/DetailView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Controls/DetailsView.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/Controls/HomeView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Controls/PageHeader.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/Controls/SettingView.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClient/Views/Controls/TransactionListView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Controls/TransactionView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Main/DetailsView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/Main/TransactionsView.axaml" value="TransactionClient/TransactionClient.csproj" />
@@ -13,6 +18,13 @@
         <entry key="TransactionClient/Views/MainWindowView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/MainWorkspaceView.axaml" value="TransactionClient/TransactionClient.csproj" />
         <entry key="TransactionClient/Views/UserLoginView.axaml" value="TransactionClient/TransactionClient.csproj" />
+        <entry key="TransactionClientGui/MainWindow.axaml" value="TransactionClientGui/TransactionClientGui.csproj" />
+        <entry key="TransactionGuiApp/App.axaml" value="TransactionGuiApp/TransactionGuiApp.csproj" />
+        <entry key="TransactionGuiApp/MainWindow.axaml" value="TransactionGuiApp/TransactionGuiApp.csproj" />
+        <entry key="TransactionGuiApp/UserControls/BalancesView.axaml" value="TransactionGuiApp/TransactionGuiApp.csproj" />
+        <entry key="TransactionGuiApp/UserControls/SettingsView.axaml" value="TransactionGuiApp/TransactionGuiApp.csproj" />
+        <entry key="TransactionGuiApp/UserControls/TransactionView.axaml" value="TransactionGuiApp/TransactionGuiApp.csproj" />
+        <entry key="TransactionGuiApp/UserControls/WelcomeView.axaml" value="TransactionGuiApp/TransactionGuiApp.csproj" />
         <entry key="TransactionNavigator/App.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
         <entry key="TransactionNavigator/Views/Controls/HamburgerButton.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />
         <entry key="TransactionNavigator/Views/Controls/PageHeader.axaml" value="TransactionNavigator/TransactionNavigator.csproj" />

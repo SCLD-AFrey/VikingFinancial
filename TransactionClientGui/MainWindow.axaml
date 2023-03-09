@@ -1,0 +1,29 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:TransactionClientGui.Controls.Converters"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TransactionClientGui.MainWindow"
+        Title="TransactionClientGui">
+    
+    <Window.Resources>
+        <converters:LogEventLevelToImageConverter x:Key="LogEventLevelToImageConverter" />
+        <converters:LogEventLevelToColorConverter x:Key="LogEventLevelToColorConverter" />
+        <converters:OnlineBrushColorConverter x:Key="OnlineBrushColorConverter"></converters:OnlineBrushColorConverter>
+    </Window.Resources>
+    
+    <Window.Styles>
+        <Style Selector="ListBox.console">
+            <Setter Property="FontFamily" Value="Consolas"/>
+        </Style>
+        <Style Selector="ListBoxItem">
+            <Setter Property="Padding" Value="10,4,10,2"/>
+        </Style>
+        <Style Selector="GridSplitter">
+            <Setter Property="Background" Value="#777777"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor"  Value="Hand"/>
+        </Style>
+    </Window.Styles>
+</Window>

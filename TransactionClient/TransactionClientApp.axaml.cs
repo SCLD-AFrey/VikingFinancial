@@ -26,7 +26,6 @@ using TransactionClient.ViewModels;
 using TransactionClient.Views;
 using TransactionClient.Models.DataStructures;
 using TransactionClient.Models.Services;
-using TransactionClient.ViewModels.Controls;
 using TransactionClient.Views.Controls;
 
 
@@ -60,12 +59,8 @@ public partial class TransactionClientApp : Application
         p_services.AddSingleton<MainWindowViewModel>();
         
         p_services.AddSingleton<DetailsModel>();
-        p_services.AddSingleton<DetailsView>();
-        p_services.AddSingleton<DetailsViewModel>();
         
         p_services.AddSingleton<TransactionModel>();
-        p_services.AddSingleton<TransactionView>();
-        p_services.AddSingleton<TransactionViewModel>();
     }
 
     public override void Initialize()

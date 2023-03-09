@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.Logging;
+using ReactiveUI.Fody.Helpers;
 using TransactionClient.ViewModels;
 
 namespace TransactionClient.Views;
@@ -20,6 +21,24 @@ public partial class MainWindow : Window
         m_logger.LogDebug("Creating MainWindowView");
         InitializeComponent();
         DataContext              = p_viewModel;
+
+
+        var carousel = this.Get<Carousel>("Carousel");
+        carousel.SelectedIndex = p_viewModel.SelectedIndex;
+
+        var btnStartPage = this.Get<Button>("BtnStartPage");
+        btnStartPage.Click += (p_sender, p_args) => p_viewModel.SelectedIndex = 0;
+        
+        var btnTransactions = this.Get<Button>("BtnTransactions");
+        btnTransactions.Click += (p_sender, p_args) => p_viewModel.SelectedIndex = 1;
+
+        var btnDetails = this.Get<Button>("BtnShowDetail");
+        btnDetails.Click += (p_sender, p_args) => p_viewModel.SelectedIndex = 2;
+
+        var btnSettings = this.Get<Button>("BtnSettings");
+        btnSettings.Click += (p_sender, p_args) => p_viewModel.SelectedIndex = 3;
+        
+        
 #if DEBUG
         this.AttachDevTools();
 #endif
