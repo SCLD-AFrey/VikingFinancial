@@ -20,9 +20,9 @@ namespace TransactionService.Services
             m_dbInterface = p_dbInterface;
         }
 
-        public override async Task<GetTransactionRangeResponse> GetTransactionRange(GetTransactionRangeRequest p_request, ServerCallContext p_context)
+        public override async Task<G_GetTransactionRangeResponse> GetTransactionRange(G_GetTransactionRangeRequest p_request, ServerCallContext p_context)
         {
-            var response = new GetTransactionRangeResponse();
+            var response = new G_GetTransactionRangeResponse();
             try
             {
                 response.TransactionRange = new G_TransactionRange();
@@ -33,8 +33,19 @@ namespace TransactionService.Services
                     new BinaryOperator(nameof(Transaction.DateTransaction), p_request.EndDate.ToDateTime(), BinaryOperatorType.LessOrEqual));
                 foreach (var t in transactions)
                 {
-                    
+                    response.TransactionRange.Transactions.Add(new G_Transaction()
+                    {
+                        Oid = t.Oid,
+                        Amount = float.Parse(t.Amount.ToString()),
+                        Category = t.Category.Title,
+                        Type = t.Type.Title,
+                        Note = t.Note,
+                        DateTransaction = t.DateTransaction.ToUniversalTime().ToTimestamp(),
+                        DateCreated = t.DateCreated.ToUniversalTime().ToTimestamp(),
+                        AddedByUser = t.AddedByUser.Oid
+                    });
                 }
+
 
 
             } catch (Exception e)

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using DevExpress.Xpo;
 using TransactionService.Services.Global;
 using VikingFinancial.Common;
 using VikingFinancial.Data.Transaction;
@@ -50,7 +51,7 @@ namespace TransactionService.Services.Database
                     
                     //Add Credit Cats
                     var cat1 = new TransactionCategory(unitOfWork) { IsLocked = false, IsCredit = true, IsDebit = false, Title = "SteelCloud"};
-                    var cat2 = new TransactionCategory(unitOfWork) { IsLocked = false, IsCredit = true, IsDebit = false, Title = "Herbal"};
+                    var cat2 = new TransactionCategory(unitOfWork) { IsLocked = false, IsCredit = true, IsDebit = false, Title = "Valkyrie Springs"};
                     var cat3 = new TransactionCategory(unitOfWork) { IsLocked = true, IsCredit = true, IsDebit = false, Title = "Initial"};
                     var cat4 = new TransactionCategory(unitOfWork) { IsLocked = true, IsCredit = true, IsDebit = true, Title = "Miscellaneous"};
                     var cat5 = new TransactionCategory(unitOfWork) { IsLocked = false, IsCredit = false, IsDebit = true, Title = "Mortgage"};
@@ -62,7 +63,61 @@ namespace TransactionService.Services.Database
                     
                     var transType1 = new TransactionType(unitOfWork) { Title = "Cash" };
                     var transType2 = new TransactionType(unitOfWork) { Title = "Check" };
-                    var transType3 = new TransactionType(unitOfWork) { Title = "Debit Card" };
+                    var transType3 = new TransactionType(unitOfWork) { Title = "E-Deposit" };
+                    var transType4 = new TransactionType(unitOfWork) { Title = "Debit Card" };
+                    
+                    await unitOfWork.CommitChangesAsync();
+
+                    XPCollection<Transaction> transactions = new XPCollection<Transaction>(unitOfWork);
+
+                    var adminUser = unitOfWork.Query<UserProfile>().FirstOrDefault(p_x => p_x.Username == "Admin");
+
+                    for (var i = 0; i < 50; i++)
+                    {
+                        var amt = GenerateRandomDollarAmount();
+                        if (i % 5 == 0)
+                        {
+                            amt *= -1;
+                        }
+                        transactions.Add(new Transaction(unitOfWork)
+                        {
+                            AddedByUser = adminUser,
+                            Amount = amt,
+                            Category = cat1,
+                            Type = transType1,
+                            Note = GenerateRandomSentence(), 
+                            DateTransaction = GenerateRandomDate(DateTime.UtcNow - TimeSpan.FromDays(30), DateTime.UtcNow), 
+                            DateCreated = GenerateRandomDate(DateTime.UtcNow - TimeSpan.FromDays(7), DateTime.UtcNow - TimeSpan.FromDays(1))
+                        });  
+                    }
+
+
+                        decimal GenerateRandomDollarAmount()
+                        {
+                            Random random = new Random();
+                            decimal amount = random.Next(10000) / 100.0m;
+                            return amount;
+                        }
+                        DateTime GenerateRandomDate(DateTime startDate, DateTime endDate)
+                        {
+                            Random random = new Random();
+                            int range = (endDate - startDate).Days;
+                            return startDate.AddDays(random.Next(range));
+                        }
+                        string GenerateRandomSentence()
+                        {
+                            Random random = new Random();
+                            string[] subjects = {"I", "You", "He", "She", "They", "We"};
+                            string[] verbs = {"am", "are", "is", "was", "were", "have been", "has been"};
+                            string[] objects = {"happy", "sad", "excited", "tired", "angry", "bored", "confused", "surprised"};
+                            string subject = subjects[random.Next(subjects.Length)];
+                            string verb = verbs[random.Next(verbs.Length)];
+                            string obj = objects[random.Next(objects.Length)];
+                            return $"{subject} {verb} {obj}.";
+                        }
+
+                    
+                    
 
                     await unitOfWork.CommitChangesAsync();
 

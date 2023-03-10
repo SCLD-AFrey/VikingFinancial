@@ -1,0 +1,94 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:TransactionNavigatorGui.Views.Converters"
+             xmlns:mainApplication="clr-namespace:TransactionNavigatorGui.Views.MainApplication"
+             xmlns:vm="clr-namespace:TransactionNavigatorGui.ViewModels.MainApplication"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="TransactionNavigatorGui.Views.MainApplication.MainApplicationView">
+    
+    <UserControl.DataContext>
+        <vm:MainApplicationViewModel />
+    </UserControl.DataContext>
+    
+    <UserControl.Styles>
+        <Style Selector="Button.Navigation" >
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Height" Value="150"></Setter>
+            <Setter Property="Foreground" Value="#FFFFFF"></Setter>
+            <Setter Property="Background" Value="#33aef5"></Setter>
+        </Style>
+        <Style Selector="StackPanel.Navigation">
+            <!-- <Setter Property="Background" Value="#7dccfa"></Setter> -->
+        </Style>
+        
+        <Style Selector="Panel.Online">
+            <Setter Property="Background" Value="#068f41"></Setter>
+        </Style>
+        <Style Selector="Panel.Offline">
+            <Setter Property="Background" Value="#fc0324"></Setter>
+        </Style>
+        <Style Selector="Panel.Status">
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0, 10 ,0,0"></Setter>
+        </Style>
+    </UserControl.Styles>
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" Classes="Navigation">
+            <Button Name="BtnWelcomeView" Classes="Navigation" 
+                    Content="Home" 
+                    Command="{Binding Path=DoNavigation}"
+                    CommandParameter="WelcomeView" />
+            <Button Name="BtnTransactionsView" Classes="Navigation" 
+                    Content="Transactions"
+                    Command="{Binding Path=DoNavigation}"
+                    CommandParameter="TransactionsView" />
+            <Button Name="BtnBalanceView" Classes="Navigation" 
+                    Content="Balances"
+                    Command="{Binding Path=DoNavigation}"
+                    CommandParameter="BalanceView" />
+            <Button Name="BtnSettingsView" Classes="Navigation" 
+                    Content="Settings"
+                    Command="{Binding Path=DoNavigation}"
+                    CommandParameter="SettingsView" />
+            <Panel Classes="Online Status" IsVisible="{Binding IsOnline}">
+                <TextBlock Text="ONLINE" HorizontalAlignment="Center" />
+            </Panel>
+            <Panel Classes="Offline Status" IsVisible="{Binding !IsOnline}">
+                <TextBlock Text="OFFLINE" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Panel>
+        </StackPanel>
+        
+        <Panel Margin="5" Grid.Row="0" Grid.Column="1">
+            <Carousel Name="MainCarousel"
+                      IsVirtualized="True"
+                      SelectedIndex="{Binding SelectedPageIndex}">
+                <Carousel.PageTransition>
+                    <CrossFade Duration="0.25"  />
+                </Carousel.PageTransition>
+                <mainApplication:WelcomeView></mainApplication:WelcomeView>
+                <mainApplication:TransactionsView></mainApplication:TransactionsView>
+                <mainApplication:BalanceView></mainApplication:BalanceView>
+                <mainApplication:SettingsView></mainApplication:SettingsView>
+            </Carousel>
+        </Panel>
+        
+    </Grid>
+</UserControl>

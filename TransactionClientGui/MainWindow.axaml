@@ -3,8 +3,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:converters="clr-namespace:TransactionClientGui.Controls.Converters"
+        xmlns:mainApplication="clr-namespace:TransactionClientGui.Controls.MainApplication"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:transactionClientGui="clr-namespace:TransactionClientGui"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TransactionClientGui.MainWindow"
+        x:DataType="transactionClientGui:MainWindow"
         Title="TransactionClientGui">
     
     <Window.Resources>
@@ -14,16 +18,49 @@
     </Window.Resources>
     
     <Window.Styles>
-        <Style Selector="ListBox.console">
-            <Setter Property="FontFamily" Value="Consolas"/>
+        <Style Selector="Button.Navigation" >
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Width" Value="140"></Setter>
+            <Setter Property="Height" Value="140"></Setter>
+            <Setter Property="Foreground" Value="#FFFFFF"></Setter>
+            <Setter Property="Background" Value="#33aef5"></Setter>
         </Style>
-        <Style Selector="ListBoxItem">
-            <Setter Property="Padding" Value="10,4,10,2"/>
-        </Style>
-        <Style Selector="GridSplitter">
-            <Setter Property="Background" Value="#777777"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Cursor"  Value="Hand"/>
+        <Style Selector="StackPanel.Navigation">
+            <Setter Property="Background" Value="#7dccfa"></Setter>
         </Style>
     </Window.Styles>
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" Classes="Navigation">
+            <Button Name="BtnWelcomeView" Classes="Navigation" Content="Home" Command="{Binding }"></Button>
+            <Button Name="BtnTransactionsView" Classes="Navigation" Content="Transactions"></Button>
+            <Button Name="BtnBalanceView" Classes="Navigation" Content="Balances"></Button>
+            <Button Name="BtnSettingsView" Classes="Navigation" Content="Settings"></Button>
+        </StackPanel>
+        
+        
+        <Panel Margin="5" Grid.Row="0" Grid.Column="1">
+            <Carousel Name="MainCarousel">
+                <Carousel.PageTransition>
+                    <PageSlide Duration="0.25" Orientation="Horizontal" />
+                </Carousel.PageTransition>
+                <mainApplication:WelcomeView></mainApplication:WelcomeView>
+                <mainApplication:TransactionsView></mainApplication:TransactionsView>
+                <mainApplication:BalanceView></mainApplication:BalanceView>
+                <mainApplication:SettingsView></mainApplication:SettingsView>
+            </Carousel>
+        </Panel>
+        
+    </Grid>
 </Window>

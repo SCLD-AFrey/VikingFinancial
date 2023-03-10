@@ -5,7 +5,7 @@
       <xpObject Id="dc79aaec-0409-4cd2-ab7c-0c2d811e76b8" name="Transaction" baseClass="XPObject" userFileName="Transaction" designerFileName="Transaction.Designer" className="Transaction" virtualName="Transaction">
         <fields>
           <generalXpObjectHasFields Id="0d742edf-a9db-4f7d-99ab-03df3e0ca598">
-            <field Id="cfdc8661-9f88-48f1-ba73-2ee7a915f6e4" name="Amount" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+            <field Id="cfdc8661-9f88-48f1-ba73-2ee7a915f6e4" name="Amount" columnType="Decimal" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="1317b9a8-9719-4874-94ea-02409740c8a8">
             <field Id="3d288a66-f5a1-4458-b642-5d9f7bb9eeec" name="Note" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />

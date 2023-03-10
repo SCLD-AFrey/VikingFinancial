@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionService", "Trans
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionClient", "TransactionClient\TransactionClient.csproj", "{B1A80AB2-9011-4ABA-8EA1-DBD64292678E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionClientGui", "TransactionClientGui\TransactionClientGui.csproj", "{47B305A5-1E43-4D3D-800E-C4999A650996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionClientGui", "TransactionClientGui\TransactionClientGui.csproj", "{47B305A5-1E43-4D3D-800E-C4999A650996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionNavigatorGui", "TransactionNavigatorGui\TransactionNavigatorGui.csproj", "{2A53C1E8-3808-449D-9E69-B47414899FBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{47B305A5-1E43-4D3D-800E-C4999A650996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B305A5-1E43-4D3D-800E-C4999A650996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B305A5-1E43-4D3D-800E-C4999A650996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A53C1E8-3808-449D-9E69-B47414899FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A53C1E8-3808-449D-9E69-B47414899FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A53C1E8-3808-449D-9E69-B47414899FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A53C1E8-3808-449D-9E69-B47414899FBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,15 +8,15 @@ option csharp_namespace="ValkyrieFinancial.Protos";
 
 
 service TransactionsService {
-  rpc GetTransactionRange(GetTransactionRangeRequest) returns (GetTransactionRangeResponse) {}
+  rpc GetTransactionRange(G_GetTransactionRangeRequest) returns (G_GetTransactionRangeResponse) {}
 }
 
-message GetTransactionRangeRequest{
+message G_GetTransactionRangeRequest{
   google.protobuf.Timestamp StartDate = 1;
   google.protobuf.Timestamp EndDate = 2;
 }
 
-message GetTransactionRangeResponse{
+message G_GetTransactionRangeResponse{
   oneof Response{
     G_TransactionRange TransactionRange = 1;
     G_Error Error = 2;
@@ -33,8 +33,8 @@ message G_Error{
 
 message G_Transaction{
   int32 Oid = 1;
-  double Amount = 2;
-  string Description = 3;
+  float Amount = 2;
+  string Note = 3;
   google.protobuf.Timestamp DateCreated = 4;
   google.protobuf.Timestamp DateTransaction = 5;
   int32 AddedByUser = 6;

@@ -18,11 +18,11 @@ namespace VikingFinancial.Data.Transaction
 
     public partial class Transaction : XPObject
     {
-        double fAmount;
-        public double Amount
+        decimal fAmount;
+        public decimal Amount
         {
             get { return fAmount; }
-            set { SetPropertyValue<double>(nameof(Amount), ref fAmount, value); }
+            set { SetPropertyValue<decimal>(nameof(Amount), ref fAmount, value); }
         }
         string fNote;
         [Size(SizeAttribute.Unlimited)]
